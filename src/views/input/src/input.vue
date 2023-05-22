@@ -1,10 +1,19 @@
 <template>
-  <div :class="[type === 'textarea' ? 'el-textarea' : 'el-input']">
+  <div
+    :class="[type === 'textarea' ? 'el-textarea' : 'el-input']"
+    @mouseenter="hovering = true"
+    @mouseleave="hovering = false"
+  >
     <template v-if="type !== 'textarea'">
-      <input class="el-input__inner" ref="input" v-bind="$attrs" />
+      <input
+        class="el-input__inner"
+        ref="input"
+        v-bind="$attrs"
+        :readonly="readonly"
+      />
     </template>
     <template v-else>
-      <textarea />
+      <textarea v-bind="$attrs" :readonly="readonly" />
     </template>
   </div>
 </template>
@@ -77,7 +86,17 @@ export default {
 
   components: {},
   mounted() {},
-  methods: {},
+  methods: {
+    getInput() {
+      return this.$refs.input || this.$refs.textarea;
+    },
+    focus() {
+      this.getInput().focus();
+    },
+    blur() {
+      this.getInput().blur();
+    },
+  },
 };
 </script>
 <style scoped lang="less"></style>
