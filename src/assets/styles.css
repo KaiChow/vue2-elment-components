@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
+@font-face {
+    font-family: element-icons;
+    src: url(element-icons.woff) format("woff");
+    font-weight: 400;
+    font-display: "auto";
+    font-style: normal
+}
+
 [class*=" el-icon-"],
 [class^=el-icon-] {
     font-family: element-icons !important;

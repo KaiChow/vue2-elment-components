@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <ElInput placeholder="请输入内容" />
+    <ElInput v-model="input" placeholder="请输入内容" clearable />
   </div>
 </template>
 
@@ -10,5 +10,10 @@ import ElInput from "@/views/input";
 export default {
   name: "HomeView",
   components: { ElInput },
+  data() {
+    return {
+      input: "测试",
+    };
+  },
 };
 </script>
