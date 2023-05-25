@@ -1,15 +1,18 @@
 <template>
   <div class="home">
-    <ElInput v-model="input" placeholder="请输入内容" clearable />
+    <Eltag closable>测试1</Eltag>
+    <Eltag closable>测试2</Eltag>
+    <Eltag closable>测试3</Eltag>
+    <Eltag closable>测试4</Eltag>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import ElInput from "@/views/input";
+import Eltag from "@/views/tag";
 export default {
   name: "HomeView",
-  components: { ElInput },
+  components: { Eltag },
   data() {
     return {
       input: "测试",
